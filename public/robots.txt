@@ -1,0 +1,19 @@
+# Robots.txt for {your-project-name}
+# https://{your-project-name}.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /_next/
+Disallow: /.next/
+Disallow: /api/
+
+# Allow important pages
+Allow: /
+
+# Sitemap location
+Sitemap: /sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
