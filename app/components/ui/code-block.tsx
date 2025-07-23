@@ -3,7 +3,7 @@
 import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Button } from '@/components/ui/button';
+import { Button } from './button';
 import { Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 

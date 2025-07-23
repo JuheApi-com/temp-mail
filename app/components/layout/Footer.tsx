@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Twitter, Youtube, Mail, MessageCircle } from "lucide-react";
-import Logo from "@/components/ui/Logo";
+import Logo from "../ui/Logo";
 
 export default function Footer() {
   return (

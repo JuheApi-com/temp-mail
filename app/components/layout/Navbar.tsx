@@ -4,18 +4,18 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown, User, Settings, LogOut, ExternalLink } from "lucide-react";
 import { throttle } from 'lodash';
-import { Button } from "@/components/ui/button";
+import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import Logo from "@/components/ui/Logo";
-import { useUser } from "@/context/UserContext";
-import UserAvatar from "@/components/ui/UserAvatar";
-import SocialLoginDetector from "@/components/ui/SocialLoginDetector";
+} from "../ui/dropdown-menu";
+import Logo from "../ui/Logo";
+import { useUser } from "../../contexts/user";
+import UserAvatar from "../ui/UserAvatar";
+import SocialLoginDetector from "../ui/SocialLoginDetector";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

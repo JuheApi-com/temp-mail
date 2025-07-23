@@ -3,11 +3,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "./button";
+import { Dialog, DialogDescription, DialogHeader, DialogTitle } from "./dialog";
+import { Badge } from "./badge";
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { cn } from '@/lib/utils';
+import { cn } from '../../../lib/utils';
 
 interface SocialLoginDetectorProps {
   onLoginSuccess?: () => void;

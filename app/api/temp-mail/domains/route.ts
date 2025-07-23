@@ -1,9 +1,9 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 const TEMP_MAIL_API_URL = 'https://hub.juheapi.com';
 const TEMP_MAIL_API_KEY = process.env.JUHE_TEMP_MAIL_API_KEY;
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     if (!TEMP_MAIL_API_KEY) {
       return NextResponse.json(

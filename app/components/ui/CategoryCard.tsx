@@ -1,7 +1,7 @@
 "use client";
 
 import { DivideIcon as LucideIcon } from "lucide-react";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardContent } from "./card";
 import Link from "next/link";
 
 interface CategoryProps {

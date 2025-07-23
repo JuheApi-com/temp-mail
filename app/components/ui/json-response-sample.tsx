@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { Copy, Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Button } from "./button";
+import { cn } from "../../../lib/utils";
 
 interface JsonResponseSampleProps {
   title?: string;

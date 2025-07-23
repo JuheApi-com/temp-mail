@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const TEMP_MAIL_API_URL = 'https://hub.juheapi.com';
-const TEMP_MAIL_API_KEY = process.env.JUHE_TEMP_MAIL_API_KEY;
+const TEMP_MAIL_API_URL = process.env.TEMP_MAIL_API_URL;
+const TEMP_MAIL_API_KEY = process.env.TEMP_MAIL_API_KEY;
 
 export async function POST(request: NextRequest) {
   try {
@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
     if (data.code === '0') {
       // Transform API response to match frontend interface
       const emails = data.data?.emails || [];
-      const messages = emails.map((email: any) => ({
+      const messages = emails.map((email: { email_key: string; from_address: string; subject: string; timestamp: number; content: string }) => ({
         id: email.email_key,
         from: email.from_address,
         subject: email.subject,

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { useUser } from '@/context/UserContext';
+import { Avatar, AvatarFallback, AvatarImage } from './avatar';
+import { useUser } from '../../contexts/user';
 import { User } from 'lucide-react';
 
 interface UserAvatarProps {

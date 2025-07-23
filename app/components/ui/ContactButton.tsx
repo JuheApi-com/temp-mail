@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "./button";
 import { Mail } from "lucide-react";
 import { useContact } from "@/hooks/useContact";
 

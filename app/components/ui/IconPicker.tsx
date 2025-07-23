@@ -6,16 +6,16 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ScrollArea } from "@/components/ui/scroll-area";
+} from "./dialog";
+import { Button } from "./button";
+import { Input } from "./input";
+import { ScrollArea } from "./scroll-area";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "./tooltip";
 import * as LucideIcons from "lucide-react";
 
 // Helper function to create a display name for icons
