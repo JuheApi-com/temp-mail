@@ -1,14 +1,15 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { Button } from '@/app/components/ui/button';
-import { Input } from '@/app/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/app/components/ui/card';
-import FloatingBackground from '@/app/components/ui/FloatingBackground';
-import { useUser } from '@/app/contexts/user';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import FloatingBackground from '@/components/ui/FloatingBackground';
+import { useUser } from '@/context/UserContext';
 import { toast } from 'sonner';
-import Navbar from '@/app/components/layout/Navbar';
-import Footer from '@/app/components/layout/Footer';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 import { 
   Copy, 
   Mail, 
@@ -22,6 +23,7 @@ import {
   Timer,
   Activity
 } from 'lucide-react';
+import { event as gtag } from '@/lib/gtag';
 
 interface Message {
   id: string;
@@ -64,9 +66,12 @@ export default function TempMailPage() {
   const [lastRefreshTime, setLastRefreshTime] = useState<number>(0);
 
   // Analytics tracking
-  const trackEvent = useCallback((eventName: string, metadata?: Record<string, unknown>) => {
-    // Analytics tracking removed for now
-    console.log('Event:', eventName, metadata);
+  const trackEvent = useCallback((eventName: string, metadata?: Record<string, any>) => {
+    gtag({
+      action: eventName,
+      category: 'temp_mail',
+      label: metadata ? JSON.stringify(metadata).slice(0, 100) : undefined,
+    });
   }, []);
 
   // Track page view
@@ -286,7 +291,7 @@ export default function TempMailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/20">
+    <div className="min-h-screen bg-gray-50 font-sans">
       {/* Header */}
       <Navbar />
       
@@ -311,9 +316,9 @@ export default function TempMailPage() {
         <div className="relative z-10">
           <div className="container mx-auto px-4 py-10">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/80 to-cyan-500/80 text-white px-6 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/80 to-cyan-500/80 text-white px-6 py-2 rounded-full text-sm font-bold mb-6 animate-fade-in">
               <Activity className="h-4 w-4" />
-              JuheAPI Demo
+              Demo
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up">
@@ -355,7 +360,7 @@ export default function TempMailPage() {
                           <Input
                             value={state.email}
                             readOnly
-                            className="font-mono text-sm bg-white/50 border-2 border-blue-200/50 focus:border-blue-400 transition-all duration-200"
+                            className="font-sans text-sm bg-white/50 border-2 border-blue-200/50 focus:border-blue-400 transition-all duration-200"
                           />
                           <Button
                             onClick={copyEmailSilent}
@@ -441,7 +446,7 @@ export default function TempMailPage() {
                           <div className="p-6 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center">
                             <Mail className="h-12 w-12 text-blue-600" />
                           </div>
-                          <p className="text-gray-500 mb-2 font-medium">No active temp email</p>
+                          <p className="text-gray-500 mb-2 font-bold">No active temp email</p>
                           <p className="text-sm text-gray-400">Generate one to start receiving emails</p>
                         </div>
                       </div>
@@ -526,17 +531,17 @@ export default function TempMailPage() {
                             <div className="p-6 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                               <Mail className="h-10 w-10 text-gray-400" />
                             </div>
-                            <p className="text-gray-500 mb-2 font-medium">No messages yet</p>
+                            <p className="text-gray-500 mb-2 font-bold">No messages yet</p>
                             {state.email ? (
                               <div className="text-sm text-gray-400 text-center">
                                 <p>Send an email to:</p>
-                                <span className="font-mono bg-gray-100 px-2 py-1 rounded text-xs block mt-2">
+                                <span className="font-sans bg-gray-100 px-2 py-1 rounded text-xs block mt-2">
                                   {state.email.length > 20 ? `${state.email.substring(0, 20)}...` : state.email}
                                 </span>
                                 <p className="mt-2">Then click refresh to check for messages</p>
                               </div>
                             ) : (
-                              <p className="text-sm text-gray-400">Generate an email first</p>
+                              <p className="text-sm text-gray-400 font-semibold">Generate an email first</p>
                             )}
                           </div>
                         </div>
@@ -602,7 +607,7 @@ export default function TempMailPage() {
                             <div className="text-sm text-gray-600 space-y-2">
                               <div className="flex items-center gap-2">
                                 <span className="font-medium">From:</span> 
-                                <span className="bg-gray-100 px-2 py-1 rounded text-xs font-mono break-all">
+                                <span className="bg-gray-100 px-2 py-1 rounded text-xs font-sans break-all">
                                   {selectedMessage.from}
                                 </span>
                               </div>

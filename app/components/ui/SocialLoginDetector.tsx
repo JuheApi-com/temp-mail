@@ -210,24 +210,6 @@ export default function SocialLoginDetector({
             </div>
 
             <div className="space-y-3">
-              <Button
-                onClick={handleGoogleLogin}
-                disabled={isSigningIn}
-                className="w-full bg-white text-[#07AAFF] hover:bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-0"
-              >
-                {isSigningIn ? (
-                  <div className="w-5 h-5 border-2 border-gray-300 border-t-[#07AAFF] rounded-full animate-spin"></div>
-                ) : (
-                                                <Image
-                                src="/google-logo.png"
-                                alt="Google"
-                                width={20}
-                                height={20}
-                                className="mr-2"
-                              />
-                )}
-                Sign in with Google
-              </Button>
 
               <Button
                 onClick={handleGitHubLogin}

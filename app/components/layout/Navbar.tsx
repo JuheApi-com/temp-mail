@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import Logo from "../ui/Logo";
-import { useUser } from "../../contexts/user";
+import { useUser } from "../../contexts/UserContext";
 import UserAvatar from "../ui/UserAvatar";
 import SocialLoginDetector from "../ui/SocialLoginDetector";
 
@@ -25,7 +25,7 @@ export default function Navbar() {
   const [isInitialized, setIsInitialized] = useState(false);
   const [showProductsRedDot, setShowProductsRedDot] = useState(true);
   const [showFreeApisRedDot, setShowFreeApisRedDot] = useState(true);
-  const { user, loading } = useUser();
+  const { user } = useUser();
 
   // 立即同步初始滚动位置，避免刷新时的跳动
   useEffect(() => {
@@ -330,38 +330,13 @@ export default function Navbar() {
                 What&apos;s New
               </Link>
               <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
-                {!loading && (
-                  user ? (
-                    <>
-                      <Link href="/console" className="text-gray-800 hover:text-[#07AAFF] transition-colors font-medium">
-                        Console
-                      </Link>
-                      <div className="flex items-center gap-2 px-2 py-1">
-                        <UserAvatar size="sm" />
-                        <div>
-                          <div className="font-medium text-gray-800">{user.name || "User"}</div>
-                          <div className="text-sm text-gray-500">{user.email}</div>
-                        </div>
-                      </div>
-                      <Link href="/console/setting" className="text-gray-800 hover:text-[#07AAFF] transition-colors font-medium px-2 py-1">
-                        Settings
-                      </Link>
-                      <Button 
-                        onClick={handleSignOut}
-                        variant="ghost"
-                        className="text-red-600 hover:text-red-700 hover:bg-transparent justify-start"
-                      >
-                        Sign Out
-                      </Button>
-                    </>
-                  ) : (
+                
                     <>
                       <Link href="/console" className="text-gray-800 hover:text-[#07AAFF] transition-colors font-medium">
                         Console
                       </Link>
                     </>
-                  )
-                )}
+                
               </div>
             </nav>
           </div>
