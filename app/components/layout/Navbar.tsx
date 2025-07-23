@@ -227,57 +227,30 @@ export default function Navbar() {
               Home
             </Link>
             <Link 
-              href="/api-catalog" 
+              href="https://freeapis.juheapi.com/apis" 
               className="transition-colors duration-200 font-medium hover:scale-105 text-white hover:text-white/90 hover:drop-shadow-lg"
             >
-              API Catalog
-            </Link>
-            <ProductMenu />
-            <Link 
-              href="/docs" 
-              className="transition-colors duration-200 font-medium hover:scale-105 text-white hover:text-white/90 hover:drop-shadow-lg"
-            >
-              Documentation
+              Free APIs
             </Link>
             <Link 
-              href="/blog/whats-new" 
+              href="https://juheapi.com/api-catalog/temp-mail" 
               className="transition-colors duration-200 font-medium hover:scale-105 text-white hover:text-white/90 hover:drop-shadow-lg"
             >
-              What&apos;s New
+              Temp Mail API
             </Link>
           </nav>
 
           <div className="hidden md:flex items-center space-x-6">
-            {!loading && (
-              user ? (
+           
                 <>
                   <Link 
-                    href="/console" 
+                    href="https://juheapi.com/console" 
                     className="font-medium transition-colors duration-200 text-white hover:text-white/80"
                   >
                     Console
                   </Link>
-                  <UserMenu />
                 </>
-              ) : (
-                <>
-                  <Link 
-                    href="/console" 
-                    className="font-medium transition-colors duration-200 text-white hover:text-white/80"
-                  >
-                    Console
-                  </Link>
-                  <a href="/api/auth/sign-in?utm_source=navbar&utm_medium=button&utm_campaign=signin">
-                    <Button
-                      size="sm"
-                      className="transition-colors duration-200 bg-white text-[#07AAFF] hover:bg-gray-100"
-                    >
-                      Sign in
-                    </Button>
-                  </a>
-                </>
-              )
-            )}
+            
           </div>
 
           {/* Mobile Menu Button */}
@@ -386,14 +359,6 @@ export default function Navbar() {
                       <Link href="/console" className="text-gray-800 hover:text-[#07AAFF] transition-colors font-medium">
                         Console
                       </Link>
-                      <a href="/api/auth/sign-in?utm_source=navbar&utm_medium=button&utm_campaign=signin">
-                        <Button 
-                          size="sm" 
-                          className="bg-[#07AAFF] hover:bg-[#0690D9] w-full text-left text-white"
-                        >
-                          Sign in
-                        </Button>
-                      </a>
                     </>
                   )
                 )}

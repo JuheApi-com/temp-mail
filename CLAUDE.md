@@ -32,6 +32,18 @@ The application integrates with the Juhe temporary email API through three main 
 
 All API routes are located in `app/api/temp-mail/` and follow a consistent error handling pattern with JSON responses containing `success` boolean and appropriate HTTP status codes.
 
+### Homepage Route
+
+The `/tempmail` functionality has been moved to the homepage route (`/`). The main temporary email interface is now accessible directly at the root URL.
+
+### Styling & Responsive Design
+
+- **Font & Background**: Matches JuheAPI design system with `font-sans` and `bg-[#f8fafc]` 
+- **Mobile-First**: Fully responsive design optimized for mobile devices
+- **Gradient Hero**: Purple gradient hero section consistent with JuheAPI branding
+- **Glass Cards**: Semi-transparent cards with backdrop blur effects
+- **Component Scaling**: All components scale appropriately across breakpoints (`sm:`, `md:`, `lg:`)
+
 ### Environment Configuration
 
 Environment variables are managed through `.env.example` template:
