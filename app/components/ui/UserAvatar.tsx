@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from './avatar';
-import { useUser } from '../../contexts/user';
+import { useUser } from '../../contexts/UserContext';
 import { User } from 'lucide-react';
 
 interface UserAvatarProps {
@@ -22,8 +22,7 @@ export default function UserAvatar({
   className = '', 
   showFallback = true 
 }: UserAvatarProps) {
-  const { user, getAvatarUrl } = useUser();
-  const [imageError, setImageError] = useState(false);
+  const { user } = useUser();
 
   if (!user) {
     return (
@@ -35,20 +34,12 @@ export default function UserAvatar({
     );
   }
 
-  const avatarUrl = getAvatarUrl();
   const fallbackText = user.name 
     ? user.name.charAt(0).toUpperCase() 
     : user.email?.charAt(0).toUpperCase() || 'U';
 
   return (
     <Avatar className={`${sizeClasses[size]} ${className}`}>
-      {!imageError && (
-        <AvatarImage 
-          src={avatarUrl}
-          alt={`${user.name || user.email}'s avatar`}
-          onError={() => setImageError(true)}
-        />
-      )}
       {showFallback && (
         <AvatarFallback className="bg-gradient-to-br from-blue-500 to-purple-600 text-white font-semibold">
           {fallbackText}

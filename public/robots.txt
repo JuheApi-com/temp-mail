@@ -1,5 +1,5 @@
-# Robots.txt for {your-project-name}
-# https://{your-project-name}.com/robots.txt
+# Robots.txt for Temp Mail Service
+# https://tempmail.juheapi.com/robots.txt
 
 User-agent: *
 Allow: /
@@ -11,9 +11,11 @@ Disallow: /api/
 
 # Allow important pages
 Allow: /
+Allow: /privacy-policy
+Allow: /terms-of-service
 
 # Sitemap location
-Sitemap: /sitemap.xml
+Sitemap: https://tempmail.juheapi.com/sitemap.xml
 
 # Crawl delay (optional)
 Crawl-delay: 1
