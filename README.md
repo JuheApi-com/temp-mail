@@ -309,7 +309,7 @@ Need help? Here are some resources:
 - **Issues**: Open an issue on GitHub
 - **Documentation**: Check the code comments
 - **Community**: Join discussions in issues
-- **Email**: Contact us at hello@juheapi.com
+- **Email**: Contact us at support@juheapi.com
 
 ## 🎉 Acknowledgments
 

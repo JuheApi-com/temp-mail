@@ -146,8 +146,8 @@ export default function TermsOfServicePage() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">12. Contact Information</h2>
                 <p className="text-gray-700">
                   If you have any questions about these Terms of Service, please contact us at{' '}
-                  <a href="mailto:hello@juheapi.com" className="text-blue-600 hover:underline">
-                    hello@juheapi.com
+                  <a href="mailto:support@juheapi.com" className="text-blue-600 hover:underline">
+                    support@juheapi.com
                   </a>
                 </p>
               </section>

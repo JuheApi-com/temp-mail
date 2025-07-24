@@ -23,7 +23,7 @@ export default function Footer() {
               <Link href="https://www.youtube.com/@JuheAPI" className="text-gray-400 hover:text-[#07AAFF] transition-colors">
                 <Youtube size={18} />
               </Link>
-              <Link href="mailto:hello@juheapi.com" className="text-gray-400 hover:text-[#07AAFF] transition-colors">
+              <Link href="mailto:support@juheapi.com" className="text-gray-400 hover:text-[#07AAFF] transition-colors">
                 <Mail size={18} />
               </Link>
             </div>
