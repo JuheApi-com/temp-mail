@@ -13,9 +13,6 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import Logo from "../ui/Logo";
-import { useUser } from "../../contexts/UserContext";
-import UserAvatar from "../ui/UserAvatar";
-import SocialLoginDetector from "../ui/SocialLoginDetector";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,9 +22,8 @@ export default function Navbar() {
   const [isInitialized, setIsInitialized] = useState(false);
   const [showProductsRedDot, setShowProductsRedDot] = useState(true);
   const [showFreeApisRedDot, setShowFreeApisRedDot] = useState(true);
-  const { user } = useUser();
 
-  // 立即同步初始滚动位置，避免刷新时的跳动
+  // initial scroll position
   useEffect(() => {
     const initScrollPosition = () => {
       if (typeof window !== "undefined") {
@@ -81,41 +77,6 @@ export default function Navbar() {
 
   const RedDot = () => (
     <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-  );
-
-  const UserMenu = () => (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost"
-          className="flex items-center gap-2 hover:bg-transparent transition-colors duration-200 text-white hover:text-white/80"
-        >
-          <UserAvatar size="sm" />
-          <span className="hidden sm:inline">{user?.name || "User"}</span>
-          <ChevronDown className="w-4 h-4" />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-56">
-        <div className="px-2 py-1.5 text-sm text-gray-500">
-          {user?.email}
-        </div>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <Link href="/console/setting" className="flex items-center gap-2">
-            <Settings className="w-4 h-4" />
-            Settings
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem 
-          onClick={handleSignOut}
-          className="flex items-center gap-2 text-red-600 hover:text-red-700 hover:bg-red-50"
-        >
-          <LogOut className="w-4 h-4" />
-          Sign Out
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
   );
 
   const ProductMenu = () => (
@@ -173,20 +134,19 @@ export default function Navbar() {
     </DropdownMenu>
   );
 
-  // 防止初始化时的样式跳动
+  // prevent style jump when initializing
   if (!isInitialized) {
     return (
       <>
-      <SocialLoginDetector />
       <header className="fixed w-full z-50 bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl opacity-0">
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <Logo variant="white" className="h-[28px]" />
             <div className="hidden md:flex items-center space-x-8">
-              {/* 预占位空间，防止布局偏移 */}
+              {/* placeholder space to prevent layout shift */}
             </div>
             <div className="hidden md:flex items-center space-x-6">
-              {/* 预占位空间，防止布局偏移 */}
+              {/* placeholder space to prevent layout shift */}
             </div>
           </div>
         </div>
@@ -197,7 +157,6 @@ export default function Navbar() {
 
   return (
     <>
-    <SocialLoginDetector />
     <header
       className={`fixed w-full z-50 transition-all duration-200 ease-in-out relative overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl ${
         isVisible ? "translate-y-0" : "-translate-y-full"

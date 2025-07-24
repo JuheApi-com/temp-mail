@@ -4,9 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import FloatingBackground from '@/components/ui/FloatingBackground';
-import { useUser } from '@/context/UserContext';
 import { toast } from 'sonner';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -48,7 +46,6 @@ const TEMP_MAIL_DURATION = 5 * 60; // 5 minutes
 const REFRESH_COOLDOWN = 10 * 1000; // 10 seconds cooldown
 
 export default function TempMailPage() {
-  const { user } = useUser();
   
   const [state, setState] = useState<TempMailState>({
     email: null,
@@ -74,13 +71,6 @@ export default function TempMailPage() {
     });
   }, []);
 
-  // Track page view
-  useEffect(() => {
-    trackEvent('page_view', {
-      user_authenticated: !!user,
-      user_name: user?.name,
-    });
-  }, [trackEvent, user]);
 
   // Format time remaining as MM:SS
   const formatTimeRemaining = (seconds: number): string => {
