@@ -2,7 +2,7 @@
 
 A modern, privacy-focused temporary email service built with Next.js 15 and powered by JuheAPI. Perfect for protecting your privacy when signing up for services, testing applications, or avoiding spam.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/JuheApi-com/temp-mail&env=JUHE_API_KEY&envDescription=JuheAPI%20key%20for%20temporary%20email%20service&envLink=https://juheapi.com/api-catalog/temp-mail)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/JuheApi-com/temp-mail&env=JUHE_TEMP_MAIL_API_KEY&envDescription=JuheAPI%20key%20for%20temporary%20email%20service&envLink=https://juheapi.com/api-catalog/temp-mail)
 
 ## ✨ Features
 
@@ -27,7 +27,7 @@ A modern, privacy-focused temporary email service built with Next.js 15 and powe
 ### Prerequisites
 
 - Node.js 18+ installed
-- A JuheAPI account and API key ([Get Free API here](https://juheapi.com/api-catalog/temp-mail))
+- A JuheAPI account and API key ([Get Free API Key Here](https://juheapi.com/api-catalog/temp-mail))
 
 ### 1. Clone the Repository
 
@@ -55,7 +55,7 @@ cp .env.example .env.local
 ```
 
 ```env
-JUHE_API_KEY=your_juhe_api_key_here
+JUHE_TEMP_MAIL_API_KEY=your_api_key_here
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
@@ -77,7 +77,7 @@ Open [http://localhost:3000](http://localhost:3000) to see your temp mail servic
 
 | Variable | Description | Required | Default |
 |----------|-------------|----------|---------|
-| `JUHE_API_KEY` | Your JuheAPI key for temp mail | Yes | - |
+| `JUHE_TEMP_MAIL_API_KEY` | Your JuheAPI key for temp mail | Yes | - |
 | `NEXT_PUBLIC_SITE_URL` | Your site URL for SEO and analytics | No | http://localhost:3000 |
 
 ### API Configuration
@@ -173,7 +173,7 @@ const messages = await fetch('/api/temp-mail/messages', {
 ### Deploy to Vercel (Recommended)
 
 1. **One-Click Deploy**: Click the "Deploy with Vercel" button above
-2. **Set Environment Variables**: Add your `JUHE_API_KEY`
+2. **Set Environment Variables**: Add your `JUHE_TEMP_MAIL_API_KEY`
 3. **Deploy**: Your app will be live in minutes!
 
 ### Manual Deployment
@@ -194,7 +194,7 @@ const messages = await fetch('/api/temp-mail/messages', {
 Make sure to set these in your deployment platform:
 
 ```env
-JUHE_API_KEY=your_production_api_key
+JUHE_TEMP_MAIL_API_KEY=your_production_api_key
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
 
