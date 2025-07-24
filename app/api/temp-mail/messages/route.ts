@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const TEMP_MAIL_API_URL = process.env.TEMP_MAIL_API_URL;
-const TEMP_MAIL_API_KEY = process.env.TEMP_MAIL_API_KEY;
+const TEMP_MAIL_API_KEY = process.env.JUHE_TEMP_MAIL_API_KEY;
 
 export async function POST(request: NextRequest) {
   try {
