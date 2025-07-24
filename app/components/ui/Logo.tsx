@@ -14,7 +14,7 @@ export default function Logo({ variant = "blue", className = "" }: LogoProps) {
   return (
     <Link href="/" className={`flex items-center ${className}`}>
       <Image
-        src="/logo.svg"
+        src="/logo.png"
         alt="JUHE API Marketplace"
         width={140}
         height={32}
