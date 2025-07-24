@@ -50,6 +50,10 @@ pnpm install
 
 Create a `.env.local` file in the root directory:
 
+```bash
+cp .env.example .env.local
+```
+
 ```env
 JUHE_API_KEY=your_juhe_api_key_here
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
