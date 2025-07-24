@@ -2,7 +2,7 @@
 
 A modern, privacy-focused temporary email service built with Next.js 15 and powered by JuheAPI. Perfect for protecting your privacy when signing up for services, testing applications, or avoiding spam.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/temp-mail&env=JUHE_API_KEY&envDescription=JuheAPI%20key%20for%20temporary%20email%20service&envLink=https://juheapi.com/api-catalog/temp-mail)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/juheapi.com/temp-mail&env=JUHE_API_KEY&envDescription=JuheAPI%20key%20for%20temporary%20email%20service&envLink=https://juheapi.com/api-catalog/temp-mail)
 
 ## ✨ Features
 
@@ -27,7 +27,7 @@ A modern, privacy-focused temporary email service built with Next.js 15 and powe
 ### Prerequisites
 
 - Node.js 18+ installed
-- A JuheAPI account and API key ([Get one here](https://juheapi.com/api-catalog/temp-mail))
+- A JuheAPI account and API key ([Get Free API here](https://juheapi.com/api-catalog/temp-mail))
 
 ### 1. Clone the Repository
 
@@ -73,7 +73,7 @@ Open [http://localhost:3000](http://localhost:3000) to see your temp mail servic
 
 | Variable | Description | Required | Default |
 |----------|-------------|----------|---------|
-| `JUHE_API_KEY` | Your JuheAPI key for temp mail service | Yes | - |
+| `JUHE_API_KEY` | Your JuheAPI key for temp mail | Yes | - |
 | `NEXT_PUBLIC_SITE_URL` | Your site URL for SEO and analytics | No | http://localhost:3000 |
 
 ### API Configuration
